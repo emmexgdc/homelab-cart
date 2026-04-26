@@ -27,7 +27,7 @@ RUN dotnet publish cartservice.csproj \
     --no-restore
 
 # ---- Stage 2: Runtime ----
-FROM mcr.microsoft.com/dotnet/runtime-deps:10.0-noble-chiseled AS runtime
+FROM mcr.microsoft.com/dotnet/runtime:10.0 AS runtime
 
 WORKDIR /app
 
