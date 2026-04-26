@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # ---- Stage 1: Builder ----
-FROM mcr.microsoft.com/dotnet/sdk:10.0 AS builder
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS builder
 
 WORKDIR /app
 
@@ -27,7 +27,7 @@ RUN dotnet publish cartservice.csproj \
     --no-restore
 
 # ---- Stage 2: Runtime ----
-FROM mcr.microsoft.com/dotnet/runtime-deps:10.0-jammy-chiseled AS runtime
+FROM mcr.microsoft.com/dotnet/runtime-deps:9.0-jammy-chiseled AS runtime
 
 WORKDIR /app
 
