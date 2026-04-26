@@ -17,10 +17,10 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS builder
 
 WORKDIR /app
 
-COPY src/cartservice.csproj ./
+COPY cartservice.csproj ./
 RUN dotnet restore cartservice.csproj
 
-COPY src/ ./
+COPY . ./
 RUN dotnet publish cartservice.csproj \
     -c Release \
     -o /cartservice \
